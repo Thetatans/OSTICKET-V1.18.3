@@ -1,6 +1,5 @@
 input:focus {
-    border: 1px solid orange;
-    box-shadow: 0 0 4px orange;
+    border-color: #4a90d9;
     outline: none;
 }
 
@@ -30,14 +29,11 @@ body {
     line-height: 1.5em;
     margin: 0;
     text-align: center;
+    background: #1a1a2e;
 }
 
 #brickwall {
-    background-image: url(../logo.php?backdrop);
-    -webkit-background-size: cover;
-       -moz-background-size: cover;
-         -o-background-size: cover;
-            background-size: cover;
+    background: #1a1a2e;
     position: absolute;
     top: 0;
     left: 0;
@@ -61,28 +57,11 @@ body {
     right: 0;
     bottom: 0;
     z-index: -1;
-    background-image: url(../logo.php?backdrop);
-    -webkit-background-size: cover;
-       -moz-background-size: cover;
-         -o-background-size: cover;
-            background-size: cover;
-    background-attachment: fixed;
-    mix-blend-mode: normal;
-    filter:"progid:DXImageTransform.Microsoft.Blur(PixelRadius='6')";
-    -ms-filter:"progid:DXImageTransform.Microsoft.Blur(PixelRadius='6')";
+    background: #1a1a2e;
 }
 
 #blur {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    -webkit-filter: blur(7px);
-    filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='5'%20/></filter></svg>#blur");
-    filter: blur(7px);
-    overflow: hidden;
-    z-index: -1;
+    display: none;
 }
 
 body, input {
@@ -91,42 +70,18 @@ body, input {
 }
 
 #loginBox {
-    box-shadow:0 0 50px 5px rgba(0,0,0,0.3), 0 0 5px -1px white;
-    mix-blend-mode: normal;
-    isolation: isolate;
     width:400px;
-    padding:1em;
-    padding-bottom: 1em;
+    padding:2.5em;
     text-align:center;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: fixed;
     left: 50%;
     top: 15%;
     margin-left: -200px;
-    border-radius: 5px;
+    background: #16213e;
+    border: 2px solid #0f3460;
 }
 
-#loginBox:after {
-    content: " ";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: rgba(255,255,255,0.6);
-    border-radius: 5px;
-    z-index: -1;
-    mix-blend-mode: normal;
-    border: 1px solid rgba(0,0,0,0.3);
-}
-/* IE 9-10 */
-@media screen\0 {
-    #loginBox:after {
-        background-color: white;
-    }
-}
 
 h1 {
     margin:0;
@@ -174,13 +129,20 @@ fieldset {
 
 fieldset input {
     display:block;
-    margin-bottom:1em;
-    border:1px solid #ccc;
-    border:1px solid rgba(0,0,0,0.3);
-    background: white;
-    background: rgba(255, 255, 255, 0.5);
-    padding:2px 4px;
+    margin-bottom:1.5em;
+    border:1px solid #0f3460;
+    background: #1a1a2e;
+    color: #e94560;
+    padding:12px;
     width: 100%;
+    font-size: 14px;
+}
+fieldset input:focus {
+    border-color: #e94560;
+    outline: none;
+}
+fieldset input::placeholder {
+    color: #4a90d9;
 }
 
 hr {
@@ -210,26 +172,18 @@ input[type="button"],
     cursor: pointer;
     display:inline-block;
     vertical-align:bottom;
-    height:24px;
-    line-height: 22px;
-    border: none;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.25) inset;
-    padding:2px 11px;
-    color: #555;
-    background-color: #f0f0f0;
-    background-color: rgba(0,0,0,0.02);
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+    height:40px;
+    line-height: 40px;
+    border: 1px solid #e94560;
+    padding: 0 25px;
+    color: #fff;
+    background-color: #e94560;
     font-family: inherit;
-    font-size: 0.8em;
+    font-size: 14px;
     text-decoration: none;
--webkit-user-select: none;
-   -moz-user-select: none;
-    -ms-user-select: none;
-        user-select: none;
--webkit-transition: opacity 0.1s ease, background-color 0.1s ease, box-shadow 0.1s ease, color 0.1s ease, background 0.1s ease;
-        transition: opacity 0.1s ease, background-color 0.1s ease, box-shadow 0.1s ease, color 0.1s ease, background 0.1s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 input[type="submit"] i,
 input[type="reset"] i,
@@ -245,15 +199,14 @@ input[type="button"] i,
 
 button[type=submit], input[type="submit"], .primary.button {
     font-weight: bold;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.45) inset;
-    background-color: rgba(0,0,0,0.07);
+    background-color: #e94560;
+    border-color: #e94560;
 }
 
 button[type=submit]:hover, input[type=submit]:hover, input[type=submit]:active {
   color: white;
-  box-shadow: 0 0 0 2px rgba(0,0,0,0.7) inset;
-  background-color: #888;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #1e5ba8;
+  border-color: #4a90d9;
 }
 
 input.submit:hover, input.submit:active {
